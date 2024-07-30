@@ -21,7 +21,7 @@ Blank for developing services
 
    ```shell
    pip install --upgrade pip
-   pip install -r requirements.txt
+   pip install -r requirements-dev.txt
    cd service
    pip install -r requirements.txt
    cd ..
