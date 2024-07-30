@@ -1,16 +1,37 @@
-import os
+from functools import lru_cache
+from logging import config as logging_config
+from pathlib import Path
 
 from dotenv import load_dotenv
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+from src.core.logger import LOGGING
 
 load_dotenv()
 
+BASE_DIR = Path(__file__).parent.parent.parent
+ENV_FILE = BASE_DIR / ".env"
 
-class Settings:
-    APP_NAME: str = os.getenv('APP_NAME', 'Service')
-    APP_DESCRIPTION: str = os.getenv('APP_DESCRIPTION', 'Description')
-    APP_VERSION: str = os.getenv('APP_VERSION', '0.0.1')
 
-    API_V1_PREFIX: str = os.getenv('API_V1_PREFIX', '/api/v1')
-    APP_PORT: int = int(os.getenv('APP_PORT', '8000'))
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=ENV_FILE)
 
-    LOG_LEVEL: str = os.getenv('LOG_LEVEL', 'info')
+    app_name: str = "Service"
+    app_description: str = "Description"
+    app_version: str = "0.0.1"
+
+    # These parameters also need to be changed in the nginx and docker settings
+    api_v1_prefix: str = "/api/v1"
+    app_port: int = 8000
+
+    log_level: str = "INFO"
+
+
+@lru_cache
+def get_settings() -> Settings:
+    return Settings()  # type: ignore[call-arg]
+
+
+settings = get_settings()
+
+logging_config.dictConfig(LOGGING)

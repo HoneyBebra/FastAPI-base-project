@@ -1,9 +1,9 @@
 from fastapi import APIRouter
 from fastapi.responses import ORJSONResponse
 
-from src.core.config import Settings
+from src.core.config import settings
 
-router = APIRouter(prefix=Settings.API_V1_PREFIX)
+router = APIRouter(prefix=settings.api_v1_prefix)
 
 
 @router.get(
