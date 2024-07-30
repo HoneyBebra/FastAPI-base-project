@@ -6,7 +6,7 @@ services:
     image: service
     restart: always
     env_file:
-      - .env
+      - ${SOURCE_CODE_PATH}/service/.env
     build: ${SOURCE_CODE_PATH}/service
 
   nginx:
