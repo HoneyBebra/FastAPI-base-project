@@ -20,11 +20,12 @@ class Settings(BaseSettings):
     app_description: str = "Description"
     app_version: str = "0.0.1"
 
-    # These parameters also need to be changed in the nginx and docker settings
-    api_v1_prefix: str = "/api/v1"
     app_port: int = 8000
 
     log_level: str = "INFO"
+
+    # These parameters also need to be changed in the nginx and docker settings
+    api_v1_prefix: str = "/api/v1"
 
 
 @lru_cache

@@ -7,10 +7,10 @@ router = APIRouter(prefix=settings.api_v1_prefix)
 
 
 @router.get(
-    path='',
+    path="",
     summary="Handler",
     description="Test handler",
     response_description="Hi",
 )
 async def handler() -> ORJSONResponse:
-    return ORJSONResponse({'Hi': 'Hallo'})
+    return ORJSONResponse({"Hi": "Hallo"})
