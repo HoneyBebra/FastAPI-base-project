@@ -7,6 +7,7 @@ Blank for developing services
 [![FastAPI][FastAPI-badge]][FastAPI-url]
 [![Gunicorn][Gunicorn-badge]][Gunicorn-url]
 [![Nginx][Nginx-badge]][Nginx-url]
+[![Docker][Docker-badge]][Docker-url]
 
 ### Installation and launch
 
@@ -45,3 +46,6 @@ Blank for developing services
 
 [Nginx-url]: https://nginx.org
 [Nginx-badge]: https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white~~
+
+[Docker-url]: https://www.docker.com
+[Docker-badge]: https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white
