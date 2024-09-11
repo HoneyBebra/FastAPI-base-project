@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  service:
+    container_name: service
+    image: service
+    restart: always
+    env_file:
+      - .env
+    build: .
+
+  nginx-service:
+    container_name: nginx-service
+    image: nginx:1.25.5
+    restart: always
+    volumes:
+      - ${INFRA_CONFIG}/nginx-service/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ${INFRA_CONFIG}/nginx-service/site.conf:/etc/nginx/conf.d/site.conf:ro
+    # ports:
+    #   - "80:80"
+
+networks:
+  default:
+    driver: bridge
+    external: true
+    name: project-network
