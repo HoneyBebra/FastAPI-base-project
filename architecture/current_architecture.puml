@@ -1,0 +1,13 @@
+@startuml
+actor User
+component NginxGateway
+
+package "service" {
+component NginxService
+component FastApiApp
+}
+
+User -> NginxGateway
+NginxGateway -> NginxService
+NginxService -> FastApiApp
+@enduml

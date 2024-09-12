@@ -36,6 +36,10 @@ Blank for developing services
    docker-compose up -d
    ```
 
+# Architecture
+
+![GDD][Current-architecture-url]
+
 <!-- MARKDOWN LINKS & BADGES -->
 
 [FastAPI-url]: https://fastapi.tiangolo.com/
@@ -49,3 +53,5 @@ Blank for developing services
 
 [Docker-url]: https://www.docker.com
 [Docker-badge]: https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white
+
+[Current-architecture-url]: ./architecture/current_architecture.png
