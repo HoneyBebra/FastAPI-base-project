@@ -9,5 +9,5 @@ compose-file ```docker-compose.infra.yml``` contains containers that are not rel
 ## Launch
 
 ```shell
-sh run_deploy.sh
+docker-compose up -d --build
 ```
