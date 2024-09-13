@@ -18,9 +18,3 @@ services:
       - ./infra/configs/nginx-service/site.conf:/etc/nginx/conf.d/site.conf:ro
     # ports:
     #   - "80:80"
-
-networks:
-  default:
-    driver: bridge
-    external: true
-    name: project-network
