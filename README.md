@@ -28,7 +28,7 @@ Blank for developing services
    cd ..
    ```
 
-3. Create a .env as in deploy/.env.example
+3. Create a .env as in service/.env.example
 4. Deploy
 
    ```shell
