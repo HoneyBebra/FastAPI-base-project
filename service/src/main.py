@@ -2,7 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
 
-from src.api.v1.main import router as api_v1_router
+from src.business_entity.router.v1.main import router as api_v1_router
 from src.core.config import settings
 from src.core.logger import LOGGING
 
