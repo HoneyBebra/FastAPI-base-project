@@ -2,12 +2,13 @@ version: "3.8"
 
 services:
   service:
-    container_name: service
     image: service
     restart: always
     env_file:
       - .env
     build: .
+    deploy:
+      replicas: 2
 
   nginx-service:
     container_name: nginx-service
